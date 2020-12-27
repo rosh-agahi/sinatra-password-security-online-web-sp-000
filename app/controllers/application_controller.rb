@@ -33,6 +33,13 @@ end
 
 	post "/login" do
 		#your code here!
+		user = User.find_by(:username => params[:username])
+  if user
+    redirect "/success"
+  else
+    redirect "/failure"
+  end
+end
 	end
 
 	get "/success" do
